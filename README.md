@@ -89,6 +89,5 @@ This would generate empty implementation of the interfaceTypeName.
 * impl is parsing AST, goimpl is using reflection.
 * impl is much faster and has better error reporting.
 * goimpl generates complete code that (usually) compiles (package/ imports).
-* goimpl can generate an minimum update for the exising implementation.
-* goimpl can generate an minimum update for the exising implementation.
+* goimpl can generate a minimum update for the exising implementation.
 * goimpl can work with ambiguous package names.
