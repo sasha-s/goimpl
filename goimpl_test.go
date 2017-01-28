@@ -35,11 +35,11 @@ import (
 type Impl struct{}
 
 func (i *Impl) Close() error {
-	panic(errors.New("Not implemented"))
+	panic(errors.New("*Impl.Close not implemented"))
 }
 
 func (i *Impl) Read(u []uint8) (int, error) {
-	panic(errors.New("Not implemented"))
+	panic(errors.New("*Impl.Read not implemented"))
 }
 `,
 		}, {
@@ -58,16 +58,16 @@ type AlmostClientCodec struct{}
 
 // number of inputs: had 1, want 0
 func (a AlmostClientCodec) Close() (err error) {
-	panic(errors.New("Not implemented"))
+	panic(errors.New("AlmostClientCodec.Close not implemented"))
 }
 
 func (a AlmostClientCodec) ReadResponseBody(i interface{}) (err error) {
-	panic(errors.New("Not implemented"))
+	panic(errors.New("AlmostClientCodec.ReadResponseBody not implemented"))
 }
 
 // inputs[0]: had 'interface {}' want '*rpc.Request'; inputs[1]: had '*rpc.Request' want 'interface {}'
 func (a AlmostClientCodec) WriteRequest(r *rpc.Request, i interface{}) (err error) {
-	panic(errors.New("Not implemented"))
+	panic(errors.New("AlmostClientCodec.WriteRequest not implemented"))
 }
 `, "'", "`", -1),
 		},
@@ -99,7 +99,7 @@ type AlmostClientCodec struct{}
 
 // Wrong number of inputs.
 func (a AlmostClientCodec) Close(int) error {
-	panic(errors.New("Not implemented"))
+	panic(errors.New("AlmostClientCodec.Close not implemented"))
 }
 
 // missing.
@@ -109,10 +109,10 @@ func (a AlmostClientCodec) Close(int) error {
 
 // As it should be.
 func (a AlmostClientCodec) ReadResponseHeader(*rpc.Response) error {
-	panic(errors.New("Not implemented"))
+	panic(errors.New("AlmostClientCodec.ReadResponseHeader not implemented"))
 }
 
 // Inputs swapped.
 func (a AlmostClientCodec) WriteRequest(interface{}, *rpc.Request) error {
-	panic(errors.New("Not implemented"))
+	panic(errors.New("AlmostClientCodec.WriteReque not implemented"))
 }

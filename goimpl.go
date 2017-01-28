@@ -362,7 +362,7 @@ type {{.Clean .ImplName}} struct{}
 {{range $R.Methods .Inter}}
 {{if .Comment}}// {{ .Comment}} {{end}}
 func ({{$rec}} {{$R.ImplName}}) {{.Name}} ({{range .Inputs}} {{.ArgName}} {{$R.GetName .}} {{.Sep}} {{end}}) ({{range .Outputs}} {{if not $R.NoNamedReturnValues}} {{.ArgName}} {{end}} {{$R.GetName .}} {{.Sep}} {{end}}) {
-	panic(errors.New("Not implemented")) }
+	panic(errors.New("{{$R.ImplName}}.{{.Name}} not implemented")) }
 {{end}}
 `
 
