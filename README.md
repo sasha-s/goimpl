@@ -1,4 +1,4 @@
-goimpl
+goimpl [![Build Status](https://travis-ci.org/sasha-s/goimpl.svg?branch=master)](https://travis-ci.org/sasha-s/goimpl)
 ======
 
 A tool to generate stub implementation of an interface.
